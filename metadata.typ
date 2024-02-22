@@ -1,0 +1,11 @@
+#let degree = "Master" //Bachelor or Master
+#let program = "Computer Science"
+#let titleEnglish = "Title English"
+#let titleGerman = "Title German"
+#let author = "Max Mustermann"
+#let matriculationNumber = "12345"
+#let supervisor = "Prof Dr. Max Mustermann"
+#let advisor = "TBD"
+#let startDate = "01.03.2024"
+#let submissionDate = "31.08.2024"
+#let place = "Karlsruhe"
