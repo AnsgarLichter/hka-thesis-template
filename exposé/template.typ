@@ -54,7 +54,7 @@
   set heading(numbering: headingsNumberingStyle)
 
   // Paragraphs
-  set par(leading: 1em, justify: true, first-line-indent: 2em)
+  set par(leading: 1em, justify: true)
 
   // Figures
   show figure: set text(size: 0.85em)
