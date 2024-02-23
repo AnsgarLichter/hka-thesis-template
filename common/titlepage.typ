@@ -58,22 +58,40 @@
     align(center, text(font: fontHeadings, 1.9em, weight: 700, title))
   }
 
-  pad(
-    top: 3em,
-    right: 10%,
-    left: 10%,
-    grid(
-      columns: (3fr, 3fr),
-      gutter: 1em,
-      strong("Author: "), author,
-      strong("Matriculation Number: "), matriculationNumber,
-      strong("Place of Work: "), placeOfWork,
-      strong("Supervisor: "), supervisor,
-      strong("Advisor: "), advisor,
-      strong("Start Date: "), startDate,
-      strong("Submission Date: "), submissionDate,
+  if advisor.len() > 0 {
+    pad(
+      top: 3em,
+      right: 10%,
+      left: 10%,
+      grid(
+        columns: (3fr, 3fr),
+        gutter: 1em,
+        strong("Author: "), author,
+        strong("Matriculation Number: "), matriculationNumber,
+        strong("Place of Work: "), placeOfWork,
+        strong("Supervisor: "), supervisor,
+        strong("Advisor: "), advisor,
+        strong("Start Date: "), startDate,
+        strong("Submission Date: "), submissionDate,
+      )
     )
-  )
+  } else {
+    pad(
+      top: 3em,
+      right: 10%,
+      left: 10%,
+      grid(
+        columns: (3fr, 3fr),
+        gutter: 1em,
+        strong("Author: "), author,
+        strong("Matriculation Number: "), matriculationNumber,
+        strong("Place of Work: "), placeOfWork,
+        strong("Supervisor: "), supervisor,
+        strong("Start Date: "), startDate,
+        strong("Submission Date: "), submissionDate,
+      )
+    )
+  }
 
   pagebreak()
 }
