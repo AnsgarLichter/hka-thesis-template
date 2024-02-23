@@ -4,6 +4,7 @@
 #let titleGerman = "Title German"
 #let author = "Max Mustermann"
 #let matriculationNumber = "12345"
+#let placeOfWork = "ABC"
 #let supervisor = "Prof Dr. Max Mustermann"
 #let advisor = "TBD"
 #let startDate = "01.03.2024"

@@ -7,6 +7,7 @@
   titleGerman: "",
   author: "",
   matriculationNumber: "",
+  placeOfWork: "",
   supervisor: "",
   advisor: "",
   startDate: none,
@@ -54,7 +55,7 @@
     align(center, text(font: fontHeadings, 1.3em, weight: 700, title))
     align(center, text(font: fontHeadings, 1.3em, weight: 500, titleGerman)) 
   } else {
-    align(center, text(font: fontHeadings, 2.0em, weight: 700, title))
+    align(center, text(font: fontHeadings, 1.9em, weight: 700, title))
   }
 
   pad(
@@ -66,6 +67,7 @@
       gutter: 1em,
       strong("Author: "), author,
       strong("Matriculation Number: "), matriculationNumber,
+      strong("Place of Work: "), placeOfWork,
       strong("Supervisor: "), supervisor,
       strong("Advisor: "), advisor,
       strong("Start Date: "), startDate,

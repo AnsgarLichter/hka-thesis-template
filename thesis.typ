@@ -10,6 +10,7 @@
   title: titleEnglish,
   author: author,
   matriculationNumber: matriculationNumber,
+  placeOfWork: placeOfWork,
   supervisor: supervisor,
   advisor: advisor,
   startDate: startDate,
