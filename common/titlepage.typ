@@ -50,22 +50,22 @@
   align(center, text(font: fontHeadings, 1.5em, weight: 100, degree + "’s Thesis in " + program))
   v(8mm)
   
-
-  align(center, text(font: fontHeadings, 2em, weight: 700, title))
-  
   if titleGerman.len() > 0 {
-    align(center, text(font: fontHeadings, 2em, weight: 500, titleGerman)) 
+    align(center, text(font: fontHeadings, 1.3em, weight: 700, title))
+    align(center, text(font: fontHeadings, 1.3em, weight: 500, titleGerman)) 
+  } else {
+    align(center, text(font: fontHeadings, 2.0em, weight: 700, title))
   }
 
   pad(
     top: 3em,
-    right: 15%,
-    left: 15%,
+    right: 10%,
+    left: 10%,
     grid(
-      columns: (2fr, 3fr),
+      columns: (3fr, 3fr),
       gutter: 1em,
       strong("Author: "), author,
-      strong("Matriculation Number: "), author,
+      strong("Matriculation Number: "), matriculationNumber,
       strong("Supervisor: "), supervisor,
       strong("Advisor: "), advisor,
       strong("Start Date: "), startDate,
