@@ -8,6 +8,7 @@
   degree: degree,
   program: program,
   title: titleEnglish,
+  subtitle: subtitleEnglish,
   author: author,
   matriculationNumber: matriculationNumber,
   placeOfWork: placeOfWork,

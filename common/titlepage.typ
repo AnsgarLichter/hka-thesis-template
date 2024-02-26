@@ -4,7 +4,9 @@
   degree: "",
   program: "",
   title: "",
+  subtitle: "",
   titleGerman: "",
+  subtitleGerman: "",
   author: "",
   matriculationNumber: "",
   placeOfWork: "",
@@ -50,12 +52,28 @@
 
   align(center, text(font: fontHeadings, 1.5em, weight: 100, degree + "’s Thesis in " + program))
   v(8mm)
-  
+
   if titleGerman.len() > 0 {
-    align(center, text(font: fontHeadings, 1.3em, weight: 700, title))
-    align(center, text(font: fontHeadings, 1.3em, weight: 500, titleGerman)) 
+    if subtitle.len() > 0 or subtitleGerman.len() > 0 {
+      align(center, text(font: fontHeadings, 1.2em, weight: 700, title))
+      align(center, text(font: fontHeadings, 1.2em, weight: 500, subtitle))
+      v(10mm)
+      align(center, text(font: fontHeadings, 1.2em, weight: 700, titleGerman))
+      align(center, text(font: fontHeadings, 1.2em, weight: 500, subtitleGerman))  
+    } else {
+      align(center, text(font: fontHeadings, 1.4em, weight: 700, title))
+      v(10mm)
+      align(center, text(font: fontHeadings, 1.4em, weight: 700, titleGerman))
+    }
   } else {
-    align(center, text(font: fontHeadings, 1.9em, weight: 700, title))
+    if subtitle.len() > 0 {
+      align(center, text(font: fontHeadings, 1.8em, weight: 700, title))
+      v(5mm)
+      align(center, text(font: fontHeadings, 1.4em, weight: 500, subtitle))
+    } else {
+      align(center, text(font: fontHeadings, 2.0em, weight: 700, title))
+    }
+    
   }
 
   if advisor.len() > 0 {

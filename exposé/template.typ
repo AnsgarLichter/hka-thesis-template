@@ -5,7 +5,9 @@
   degree: "",
   program: "",
   title: "",
+  subtitle: "",
   titleGerman: "",
+  subtitleGerman: "",
   author: "",
   matriculationNumber: "",
   placeOfWork: "",
@@ -20,7 +22,9 @@
     degree: degree,
     program: program,
     title: title,
+    subtitle: subtitle,
     titleGerman: titleGerman,
+    subtitleGerman: subtitleGerman,
     author: author,
     matriculationNumber: matriculationNumber,
     placeOfWork: placeOfWork,
@@ -47,6 +51,9 @@
   )
 
   show math.equation: set text(weight: 400)
+
+  // Citations
+  set cite(style: citationStyle)
 
   // Headings
   show heading: set block(below: 0.85em, above: 1.75em)

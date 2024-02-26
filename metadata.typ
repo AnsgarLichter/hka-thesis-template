@@ -1,7 +1,9 @@
 #let degree = "Master" //Bachelor or Master
 #let program = "Computer Science"
 #let titleEnglish = "Title English"
+#let subtitleEnglish = "Subtitle English"
 #let titleGerman = "Title German"
+#let subtitleGerman = "Subtitle German"
 #let author = "Max Mustermann"
 #let matriculationNumber = "12345"
 #let placeOfWork = "ABC"
