@@ -62,6 +62,9 @@
   // Figures
   show figure: set text(size: 0.85em)
 
+  //Indentation of Lists
+  set enum(indent: 2.5em)
+  
   // Citations
   set cite(style: citationStyle)
 
