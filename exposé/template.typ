@@ -55,6 +55,9 @@
   // Citations
   set cite(style: citationStyle)
 
+  //Indentation of Lists
+  set enum(indent: 2.5em)
+  
   // Headings
   show heading: set block(below: 0.85em, above: 1.75em)
   show heading: set text(font: fontBody)
