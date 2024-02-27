@@ -119,7 +119,7 @@
   pagebreak()
 
   // List of Abbreviations
-  heading(numbering: none)[List of Abbreviations]
+  heading(numbering: none, outlined: false)[List of Abbreviations]
   print-glossary(
     abbreviations,
     show-all: false,
