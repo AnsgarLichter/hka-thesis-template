@@ -130,9 +130,11 @@
   // Main Body
   set heading(numbering: headingsNumberingStyle, supplement: "Chapter")
   set page(
-    margin: (left: 2.5cm, right: 2.5cm, top: 4cm, bottom: 2.5cm),
+    numbering: "1/1",
     number-align: center,
   )
+  counter(page).update(1)
+  
 
   // Header with current heading
   set page(
