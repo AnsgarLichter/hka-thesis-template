@@ -207,7 +207,8 @@
   )
 
   set page(
-    number-align: center,
+    numbering: "1/1",
+    number-align: center
   )
   counter(page).update(1)
   // Set after header and after all initial pages to just apply it to the acutal content
