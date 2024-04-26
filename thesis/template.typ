@@ -143,10 +143,18 @@
 
   // Main Body
   set heading(numbering: headingsNumberingStyle, supplement: [Chapter])
-  show heading.where(level: 1): it => [
-    // #pagebreak()
-    #it
-  ]
+  show heading.where(level: 1): it => {
+    if it.numbering == none {
+      [
+        #it
+      ]
+    } else {
+      [
+        #pagebreak()
+        #it
+      ]
+    }
+  }
   
   set page(
     // Header with current heading
