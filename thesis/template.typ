@@ -4,6 +4,12 @@
 #import "../abbreviations.typ": abbreviations
 #import "@preview/hydra:0.3.0": hydra
 
+https://github.com/typst/typst/issues/1295
+#let in-outline = state("in-outline", false)
+#let flex-caption(long, short) = locate(loc => 
+    if in-outline.at(loc) { short } else { long }
+)
+
 #let thesis(
   degree: "",
   program: "",
@@ -39,7 +45,7 @@
   set page(
     margin: (left: 2.5cm, right: 2.5cm, top: 4cm, bottom: 2.5cm),
     numbering: "I",
-    number-align: center,
+    number-align: center
   )
   counter(page).update(2)
 
@@ -87,6 +93,13 @@
   // Abstract German
   include "../supplementary/abstractGerman.typ"
   pagebreak()
+
+  // Enable short captions to omit citations
+  show outline: it => {
+      in-outline.update(true)
+      it
+      in-outline.update(false)
+  }
 
   // Table of Contents
   outline(
@@ -216,7 +229,7 @@
 
   set page(
     numbering: "1/1",
-    number-align: center
+    number-align: center,
   )
   counter(page).update(1)
   // Set after header and after all initial pages to just apply it to the acutal content

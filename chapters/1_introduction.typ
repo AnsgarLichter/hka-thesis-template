@@ -1,5 +1,7 @@
-#import "../common/todo.typ": *
+
+#import "/common/todo.typ": *
 #import "@preview/glossarium:0.2.6": gls, glspl
+#import "/thesis/template.typ": flex-caption
 
 = Introduction
 
@@ -24,8 +26,11 @@
 This is an example citation @Smith.2020. #gls("oidc") means @oidc. @figure describes @table which is shown in @listing. Test a b c d.
 
 #figure(
-  image("../figures/tiger.png", width: 80%),
-  caption: "Example for a figure"
+  image("/figures/tiger.png", width: 80%),
+  caption: flex-caption(
+    [This is my long caption text in the document. @a],
+    [This is short],
+  )
 ) <figure>
 
 #figure(
@@ -45,7 +50,10 @@ This is an example citation @Smith.2020. #gls("oidc") means @oidc. @figure descr
     $ sqrt(2) / 12 a^3 $,
     [$a$: edge length]
   ),
-  caption: "Example for a table"
+  caption: flex-caption(
+    [This is my long caption text in the document. @b],
+    [This is short],
+  )
 ) <table>
 
 #figure(
@@ -54,5 +62,8 @@ This is an example citation @Smith.2020. #gls("oidc") means @oidc. @figure descr
       println!("Hello World!");
   }
   ```,
-  caption: "Example for a code listing"
+  caption: flex-caption(
+    [This is my long caption text in the document. @c],
+    [This is short],
+  )
 ) <listing>
