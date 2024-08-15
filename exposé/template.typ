@@ -1,5 +1,5 @@
-#import "../common/titlepage.typ": *
-#import "../common/settings.typ": *
+#import "/common/titlepage.typ": *
+#import "/common/settings.typ": *
 
 #let exposé(
   degree: "",

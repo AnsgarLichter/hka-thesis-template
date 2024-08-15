@@ -34,14 +34,13 @@
 
   
   // Title Page
-  v(1cm)
   grid(
     columns: (1fr, 1fr),
     align(left)[
-      #image("../assets/SAPLogo.svg", height: 1.5cm)
+      #image("/assets/SAPLogo.svg", height: 1.5cm)
     ],
     align(right)[
-      #image("../assets/HKALogo.png", height: 2cm)
+      #image("/assets/HKALogo.png", height: 2cm)
     ]
   )
 

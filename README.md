@@ -27,6 +27,9 @@ The template supports the following pages out-of-the-box:
 - List of Abbreviations (for instructions refer to [glossarium](https://github.com/typst/packages/tree/main/packages/preview/glossarium/0.2.6))
 - Bibliography
 
+# **Usage of official Titlepage**
+In the intranet you can download the official titlepage. As Typst is not able to include PDFs you must manually exchange the current titlepage with the official in the final PDF file.
+
 ## Header
 Every header includes the heading of the current chapter, section or subsection. 
 ![Current Subsection](assets/image.png)

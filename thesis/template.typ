@@ -1,10 +1,8 @@
-#import "../common/titlepage.typ": *
-#import "../common/settings.typ": *
+#import "/common/titlepage.typ": *
+#import "/common/settings.typ": *
 #import "@preview/glossarium:0.2.6": print-glossary
-#import "../abbreviations.typ": abbreviations
-#import "@preview/hydra:0.3.0": hydra
+#import "/abbreviations.typ": abbreviations
 
-https://github.com/typst/typst/issues/1295
 #let in-outline = state("in-outline", false)
 #let flex-caption(long, short) = locate(loc => 
     if in-outline.at(loc) { short } else { long }
@@ -80,18 +78,18 @@ https://github.com/typst/typst/issues/1295
   set cite(style: citationStyle)
 
   // Additional Syntax Styles
-  set raw(syntaxes: ("../syntax/cds.sublime-syntax"))
+  set raw(syntaxes: ("/syntax/cds.sublime-syntax"))
 
   // Statutory Declaration
-  include "../supplementary/statutoryDeclaration.typ"
+  include "/supplementary/statutoryDeclaration.typ"
   pagebreak()
 
   // Abstract
-  include "../supplementary/abstract.typ"
+  include "/supplementary/abstract.typ"
   pagebreak()
 
   // Abstract German
-  include "../supplementary/abstractGerman.typ"
+  include "/supplementary/abstractGerman.typ"
   pagebreak()
 
   // Enable short captions to omit citations
@@ -167,7 +165,17 @@ https://github.com/typst/typst/issues/1295
         #it
       ]
     }
+
+    counter(figure.where(kind: table)).update(0);
+    counter(figure.where(kind: image)).update(0);
+    counter(figure.where(kind: raw)).update(0);
   }
+
+  set figure(numbering: it => {
+    let numberingOfHeading = counter(heading).display();
+    let topLevelNumber = numberingOfHeading.slice(0, numberingOfHeading.position("."))
+    [#topLevelNumber.#it]
+  })
   
   set page(
     // Header with current heading
@@ -269,6 +277,20 @@ https://github.com/typst/typst/issues/1295
     ]
   }
 
+  set figure(numbering: it => {
+    let alphabet = ("A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z")
+    let numberingOfHeading = counter(heading).display();
+    let topLevelNumber = numberingOfHeading.slice(0, numberingOfHeading.position("."))
+    let index = alphabet.position((el) => { el == topLevelNumber})
+
+    if index == none {
+      let numberingToAlphabet = numbering("A", int(topLevelNumber))
+      [#numberingToAlphabet.#it]
+    } else {
+      [#topLevelNumber.#it]
+    }
+  })
+
   show heading.where(level: 1): it => {
     if it.numbering == none {
       [
@@ -280,6 +302,10 @@ https://github.com/typst/typst/issues/1295
         #it
       ]
     }
+
+    counter(figure.where(kind: table)).update(0);
+    counter(figure.where(kind: image)).update(0);
+    counter(figure.where(kind: raw)).update(0);
   }
 
   body
