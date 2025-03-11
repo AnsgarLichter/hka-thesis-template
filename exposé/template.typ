@@ -42,14 +42,14 @@
     margin: (left: 2.5cm, right: 2.5cm, top: 4cm, bottom: 2.5cm),
     numbering: "1 / 1",
     number-align: center,
-    footer: locate(currentLocation => {
+    footer: context {
       let currentPage = counter(page).display()
-      let finalPage = counter(page).final(currentLocation).first()
+      let finalPage = counter(page).final().first()
   
       line(length: 100%, stroke: (paint: gray))
       align(center)[#currentPage / #finalPage]
     })
-  )
+
   counter(page).update(1)
 
   // Body Font Family

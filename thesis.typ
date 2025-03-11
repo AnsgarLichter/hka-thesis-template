@@ -1,9 +1,11 @@
 #import "thesis/template.typ": *
 #import "common/todo.typ": *
 #import "metadata.typ": *
-#import "@preview/glossarium:0.2.6": make-glossary
+#import "@preview/glossarium:0.5.4": make-glossary, register-glossary
+#import "/abbreviations.typ": abbreviations
 
 #show: make-glossary
+#register-glossary(abbreviations)
 #show: thesis.with(
   degree: degree,
   program: program,

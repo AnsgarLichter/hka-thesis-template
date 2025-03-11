@@ -1,6 +1,6 @@
 
 #import "/common/todo.typ": *
-#import "@preview/glossarium:0.2.6": gls, glspl
+#import "@preview/glossarium:0.5.4": gls, glspl
 #import "/thesis/template.typ": flex-caption
 
 = Introduction

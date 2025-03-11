@@ -1,12 +1,10 @@
 #import "/common/titlepage.typ": *
 #import "/common/settings.typ": *
-#import "@preview/glossarium:0.2.6": print-glossary
+#import "@preview/glossarium:0.5.4": print-glossary
 #import "/abbreviations.typ": abbreviations
 
 #let in-outline = state("in-outline", false)
-#let flex-caption(long, short) = locate(loc => 
-    if in-outline.at(loc) { short } else { long }
-)
+#let flex-caption(long, short) = context if in-outline.get() { short } else { long }
 
 #let thesis(
   degree: "",
@@ -106,7 +104,7 @@
       
     },
     target: heading.where(supplement: [Chapter], outlined: true),
-    indent: true,
+    indent: auto,
     depth: 3
   )
   
@@ -179,22 +177,21 @@
   
   set page(
     // Header with current heading
-    header: locate(location => {
+    header: context {
       let elements = query(
-        selector(heading.where(depth: 1)).after(location), 
-        location
+        selector(heading.where(depth: 1)).after(here())
       )
 
       // Don't show header if a new chapter is starting at the current page
-      if elements != () and elements.first().location().page() == location.page() and elements.first().depth == 1 {
+      if elements != () and elements.first().location().page() == here().page() and elements.first().depth == 1 {
           return;
       }
 
       let displayHeading
       let displayNumbering
       let element
-      elements = query(selector(heading).after(location), location)
-      if elements != () and elements.first().location().page() == location.page() {
+      elements = query(selector(heading).after(here()))
+      if elements != () and elements.first().location().page() == here().page() {
         element = elements.first()
         if element.has("numbering") and element.numbering != none {
           displayNumbering = numbering(element.numbering, ..counter(heading).at(element.location()))
@@ -206,9 +203,7 @@
       } else {
         // Otherwise take the next heading backwards
         elements = query(
-          heading.where().before(location), 
-          location
-        )
+          heading.where().before(here())        )
         if elements != () {
           element = elements.last()
           if element.has("numbering") and element.numbering != none {
@@ -223,16 +218,16 @@
 
       align(center, displayNumbering + " " + displayHeading)
       line(length: 100%, stroke: (paint: gray))
-    }),
+    },
     
     // Footer with Page Numbering
-    footer: locate(currentLocation => {
+    footer: context {
       let currentPage = counter(page).display()
-      let finalPage = counter(page).final(currentLocation).first()
+      let finalPage = counter(page).final().first()
   
       line(length: 100%, stroke: (paint: gray))
       align(center)[#currentPage / #finalPage]
-    })
+    }
   )
 
   set page(
@@ -255,7 +250,7 @@
       heading("Appendix", outlined: true, numbering: none)
     },
     target: heading.where(supplement: [Appendix], outlined: true),
-    indent: true,
+    indent: auto,
     depth: 3
   )
 
