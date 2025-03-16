@@ -1,7 +1,11 @@
+# This repo is archived in favor of [AnsgarLichter/unofficial-hka-thesis](https://github.com/AnsgarLichter/unofficial-hka-thesis)
+
+---
+
 # Typst Template HKA <a href="https://github.tools.sap/I573017/hka-thesis-template/generate"><img src="https://img.shields.io/badge/Generate_from_Template-8A2BE2?logo=github" /></a>
 
 This is a thesis template written in [Typst](https://typst.app/), 
-based on the [I573021/hka-template-typst](https://github.tools.sap/I573021/hka-template-typst) and [template of the TU Munich](https://github.com/ls1intum/thesis-template-typst).
+based on the [template of the TU Munich](https://github.com/ls1intum/thesis-template-typst).
 
 ## Getting Started
 Refer to to [Typst's Tutorial and Documentation](https://typst.app/) to setup your environment.
